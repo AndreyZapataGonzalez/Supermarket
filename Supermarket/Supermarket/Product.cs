@@ -20,9 +20,10 @@ namespace Supermarket
 
         public override string ToString()
         {
-            return $"{Id}  {Description}" +
-                $"\n\tPrice.........:{$"{Price:C2}", 12}" +
-                $"\n\tTax........:     {$"{Tax:P2} ",12}";
+            return $"{Id}    {Description}" +
+                $"\n\tPrice.........:{$"{Price:C2}",12}" +
+                $"\n\tTax...........:   {$"{Tax:P2} ",12}" +
+                $"\n\tValue.........: {$"{ValueToPay():C2} ",12}";
         }
     }
 }
