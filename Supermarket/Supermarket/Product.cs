@@ -6,8 +6,23 @@ using System.Threading.Tasks;
 
 namespace Supermarket
 {
-    public class Product
+    public abstract class Product:Ipay
     {
-        public int MyProperty { get; set; }
+        public int Id { get; set; }
+
+        public string Description { get; set; }
+
+        public decimal Price { get; set; }
+
+        public double Tax { get; set; }
+
+        public abstract decimal ValueToPay();
+
+        public override string ToString()
+        {
+            return $"{Id}  {Description}" +
+                $"\n\tPrice.........:{$"{Price:C2}", 12}" +
+                $"\n\tTax........:     {$"{Tax:P2} ",12}";
+        }
     }
 }
